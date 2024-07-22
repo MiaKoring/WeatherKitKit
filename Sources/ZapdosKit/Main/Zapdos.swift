@@ -23,4 +23,6 @@ public class Zapdos {
         self.weather = res
         return true
     }
+    
+    public init() {}
 }
