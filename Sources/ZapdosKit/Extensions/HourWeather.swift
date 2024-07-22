@@ -9,7 +9,7 @@ import Foundation
 import WeatherKit
 import SwiftChameleon
 
-extension HourWeather {
+public extension HourWeather {
     
     ///temp as Double in Celsius
     var temp: Double{
