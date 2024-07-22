@@ -22,6 +22,11 @@ public extension Weather {
         self.todaysDailyForecast?.extremes()
     }
     
+    func intExtremes() -> (Int, Int)? {
+        guard let (min, max) = self.extremes() else { return nil }
+        return (Double(min.value.float).roundedInt, Double(max.value.float).roundedInt)
+    }
+    
     /// average humidity in percent
     var todaysAverageHumidity: Double {
         let values = self.todaysHourlyHumidity
@@ -35,6 +40,10 @@ public extension Weather {
         return average * 100.0
     }
     
+    var intAverageHumidity: Int {
+        self.todaysAverageHumidity.roundedInt
+    }
+    
     /// median humidity in percent
     var todaysMedianHumidity: Double {
         let values = self.todaysHourlyHumidity
@@ -42,6 +51,10 @@ public extension Weather {
         let sorted = values.sorted()
         
         return sorted[sorted.count / 2] * 100.0
+    }
+    
+    var intMedianHumidity: Int {
+        self.todaysMedianHumidity.roundedInt
     }
     
     var todaysHourlyHumidity: [Double] {
@@ -75,12 +88,20 @@ public extension Weather {
         return sum / values.count.double
     }
     
+    var intAverageWindspeed: Int {
+        self.todaysAverageWindspeed.roundedInt
+    }
+    
     ///median windspeed in kph
     var todaysMedianWindspeed: Double {
         let values = self.todaysHourlyWindspeed
         let sorted = values.sorted(by: {$0.speed < $1.speed})
         
         return sorted[values.count / 2].speed.converted(to: .kilometersPerHour).value
+    }
+    
+    var intMedianWindspeed: Int {
+        self.todaysAverageWindspeed.roundedInt
     }
     
     var todaysHourlyWindspeed: [Wind] {
