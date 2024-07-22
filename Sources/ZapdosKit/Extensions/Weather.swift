@@ -14,6 +14,29 @@ public extension Weather {
         return currentTemp.converted(to: UnitTemperature.celsius)
     }
     
+    var intCurrentTemp: Int {
+        Double(self.currentTempCel.value.float).roundedInt
+    }
+    
+    ///current humidity in percent
+    var currentHumidity: Double {
+        self.currentWeather.humidity * 100
+    }
+    
+    ///current humidity in percent
+    var intCurrentHumidity: Int {
+        self.currentHumidity.roundedInt
+    }
+    
+    ///speed in kph
+    var currentWindspeed: Double {
+        self.currentWeather.wind.speed.converted(to: .kilometersPerHour).value
+    }
+    
+    var intCurrentWindspeed: Int {
+        self.currentWindspeed.roundedInt
+    }
+    
     var currentCondition: WeatherCondition {
         self.currentWeather.condition
     }
@@ -102,6 +125,12 @@ public extension Weather {
     
     var intMedianWindspeed: Int {
         self.todaysAverageWindspeed.roundedInt
+    }
+    
+    ///precipation-amount in millimeters
+    var precipitionAmount: Int? {
+        let today = self.todaysDailyForecast
+        return today?.precipitationAmount.converted(to: .millimeters).value.roundedInt
     }
     
     var todaysHourlyWindspeed: [Wind] {
