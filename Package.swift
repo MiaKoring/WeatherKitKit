@@ -17,13 +17,12 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/simon-zwicker/SwiftChameleon.git", branch: "main"),
-        .package(url: "https://github.com/simon-zwicker/Mammut.git", branch: "main"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "ZapdosKit", dependencies: [.byName(name: "SwiftChameleon"), .byName(name: "Mammut")]),
+            name: "ZapdosKit", dependencies: [.byName(name: "SwiftChameleon")]),
         .testTarget(
             name: "ZapdosKitTests",
             dependencies: ["ZapdosKit"]),
