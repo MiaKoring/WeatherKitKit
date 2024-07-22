@@ -1,15 +1,6 @@
 {
-  "originHash" : "9392fea7987d596ecb28f8a052206c2c29ee3ba2cfdec6aaa999c17894d08777",
+  "originHash" : "2e583f3e4e046d9cd1e0ad31cc2df03e5f5622f21fa353c03ea6d83a3512c68d",
   "pins" : [
-    {
-      "identity" : "mammut",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/simon-zwicker/Mammut.git",
-      "state" : {
-        "branch" : "main",
-        "revision" : "493dfad156c26d4ca8da98917110a918efdb0bc7"
-      }
-    },
     {
       "identity" : "swiftchameleon",
       "kind" : "remoteSourceControl",
