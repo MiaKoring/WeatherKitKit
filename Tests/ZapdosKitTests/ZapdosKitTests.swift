@@ -1,5 +1,5 @@
 import XCTest
-@testable import WeatherKitKit
+@testable import ZapdosKit
 import CoreLocation
 
 final class WeatherKitKitTests: XCTestCase {
