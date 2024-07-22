@@ -12,7 +12,7 @@ final class WeatherKitKitTests: XCTestCase {
     }
     
     func testHumidity() async {
-        let weather = ObservableWeather()
+        let weather = Zapdos()
         guard await weather.fetchWeather(for: CLLocation(latitude: 54.4858, longitude: 9.05239)) else {
             XCTFail()
             return
@@ -26,7 +26,7 @@ final class WeatherKitKitTests: XCTestCase {
     }
     
     func testSuntime() async {
-        let weather = ObservableWeather()
+        let weather = Zapdos()
         guard await weather.fetchWeather(for: CLLocation(latitude: 54.4858, longitude: 9.05239)) else {
             XCTFail()
             return
@@ -40,7 +40,7 @@ final class WeatherKitKitTests: XCTestCase {
     }
     
     func testNextHourly() async {
-        let weather = ObservableWeather()
+        let weather = Zapdos()
         guard await weather.fetchWeather(for: CLLocation(latitude: 54.4858, longitude: 9.05239)) else {
             XCTFail()
             return

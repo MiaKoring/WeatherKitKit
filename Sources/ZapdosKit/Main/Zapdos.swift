@@ -12,7 +12,7 @@ import SwiftUI
 
 @Observable
 public class Zapdos {
-    public static let shared = ObservableWeather()
+    public static let shared = Zapdos()
     
     private let service = WeatherService()
     
