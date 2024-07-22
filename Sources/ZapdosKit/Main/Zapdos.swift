@@ -11,7 +11,7 @@ import CoreLocation
 import SwiftUI
 
 @Observable
-public class ObservableWeather {
+public class Zapdos {
     public static let shared = ObservableWeather()
     
     private let service = WeatherService()
