@@ -18,6 +18,10 @@ public extension Weather {
         self.currentWeather.condition
     }
     
+    func extremes() -> (Measurement<UnitTemperature>, Measurement<UnitTemperature>)? {
+        self.todaysDailyForecast?.extremes()
+    }
+    
     /// average humidity in percent
     var todaysAverageHumidity: Double {
         let values = self.todaysHourlyHumidity
